@@ -44,7 +44,6 @@ GROUPS = [
     ("Privacy-preserving pattern mining", ["HideNOSP"]),
     ("Datasets", ["huspm-datasets", "graph-datasets", "convert-spmf-to-quantitative"]),
     ("Tools", ["conf-tracker", "latex-to-word"]),
-    ("Teaching", ["introduction-to-data-mining"]),
 ]
 OTHER = "Other projects"
 # shown in place of the repository's own description
@@ -99,7 +98,7 @@ def self_test() -> int:
                unplaced == ["new-repo"] and "## Other projects" in text and "new-repo" in text),
               ("a grouped repository that is not public is reported and left out",
                "wfsm-bench" in gone and "wfsm-bench" not in text),
-              ("an empty group is not shown", "## Teaching" not in text),
+              ("an empty group is not shown", "## Tools" not in text),
               ("a description override replaces the repository's own",
                DESCRIPTIONS["conf-tracker"].split(":")[0] in render([{"name": "conf-tracker", "description": "", "url": "u"}])[0])]
     try:
